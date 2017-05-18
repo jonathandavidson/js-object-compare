@@ -26,7 +26,7 @@ describe('compareObjects()', () => {
         bar: 'baz'
       };
 
-      it('returns true', () => {
+      it('returns false', () => {
         expect(compareObjects(objectA, objectB)).toBe(false);
       });
     });
@@ -55,7 +55,7 @@ describe('compareObjects()', () => {
         bar: true
       };
 
-      it('returns true', () => {
+      it('returns false', () => {
         expect(compareObjects(objectA, objectB)).toBe(false);
       });
     });
@@ -84,7 +84,7 @@ describe('compareObjects()', () => {
         bar: 2
       };
 
-      it('returns true', () => {
+      it('returns false', () => {
         expect(compareObjects(objectA, objectB)).toBe(false);
       });
     });
@@ -174,7 +174,7 @@ describe('compareArrays', () => {
         'baz'
       ];
 
-      it('returns true', () => {
+      it('returns false', () => {
         expect(compareArrays(arrayA, arrayB)).toBe(false);
       });
     });
