@@ -129,6 +129,25 @@ describe('compareObjects()', () => {
       expect(compareObjects(objectA, objectC)).toBe(false);
     });
   });
+
+  describe('when one of the properties is an array', () => {
+    const objectA = {
+      'foo': [ 'foo' ]
+    };
+
+    const objectB = {
+      'foo': [ 'foo' ]
+    };
+
+    const objectC = {
+      'foo': [ 'bar' ]
+    };
+
+    it('compares the arrays', () => {
+      expect(compareObjects(objectA, objectB)).toBe(true);
+      expect(compareObjects(objectA, objectC)).toBe(false);
+    });
+  });
 });
 
 describe('compareArrays', () => {
@@ -210,7 +229,6 @@ describe('compareArrays', () => {
   });
 });
 
-/*
 describe('a real world test', () => {
   const offerA = {
       rate: "freeOfCharge",
@@ -271,7 +289,6 @@ describe('a real world test', () => {
   };
 
   it('passes', () => {
-    expect(compareObjects(offerA, offerB)).toBe(true);
+    expect(compareObjects(offerA, offerB, [ '_id' ])).toBe(true);
   });
 });
-*/
