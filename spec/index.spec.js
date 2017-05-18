@@ -126,7 +126,7 @@ describe('compareObjects()', () => {
 
     it('compares string representations of that date', () => {
       expect(compareObjects(objectA, objectB)).toBe(true);
-      // expect(compareObjects(objectA, objectC)).toBe(false);
+      expect(compareObjects(objectA, objectC)).toBe(false);
     });
   });
 });
@@ -156,6 +156,54 @@ describe('compareArrays', () => {
       ];
 
       it('returns true', () => {
+        expect(compareArrays(arrayA, arrayB)).toBe(false);
+      });
+    });
+  });
+
+  describe('when one of the elements is an object', () => {
+    const arrayA = [
+      {
+        foo: 'foo',
+        bar: 'bar'
+      },
+      'foo'
+    ];
+
+    describe('and an equal object is in the other array', () => {
+      it('returns true', () => {
+        const arrayB = [
+          'foo',
+          {
+            foo: 'foo',
+            bar: 'bar'
+          }
+        ];
+
+        expect(compareArrays(arrayA, arrayB)).toBe(true);
+      });
+    });
+
+    describe('and no equal object is in the other array', () => {
+      const arrayB = [
+        'foo',
+        {
+          foo: 'foo',
+          bar: 'baz'
+        }
+      ];
+      it('returns false', () => {
+        expect(compareArrays(arrayA, arrayB)).toBe(false);
+      });
+    });
+
+    describe('and no other object is in the other array', () => {
+      const arrayB = [
+        'foo',
+        'bar'
+      ];
+
+      it('returns false', () => {
         expect(compareArrays(arrayA, arrayB)).toBe(false);
       });
     });
