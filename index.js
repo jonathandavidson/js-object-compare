@@ -1,4 +1,4 @@
-function compareArrays(arrayA, arrayB, ignoreKeys=[]) {
+function compareArrays (arrayA, arrayB, ignoreKeys = []) {
   if (!Array.isArray(arrayA) || !Array.isArray(arrayB)) return false;
 
   return arrayA.every(arrayAItem => {
@@ -16,7 +16,7 @@ function compareArrays(arrayA, arrayB, ignoreKeys=[]) {
   });
 }
 
-function compareProperties(propertyA, propertyB, ignoreKeys=[]) {
+function compareProperties (propertyA, propertyB, ignoreKeys = []) {
   let equal;
 
   if (propertyA instanceof Date && typeof propertyB === 'string') {
@@ -32,7 +32,7 @@ function compareProperties(propertyA, propertyB, ignoreKeys=[]) {
   return equal;
 }
 
-function compareObjects(objectA, objectB, ignoreKeys=[]) {
+function compareObjects (objectA, objectB, ignoreKeys = []) {
   if (objectA instanceof Date && objectB instanceof Date) {
     return objectA.getTime() === objectB.getTime();
   }

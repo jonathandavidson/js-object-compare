@@ -231,61 +231,60 @@ describe('compareArrays', () => {
 
 describe('a real world test', () => {
   const offerA = {
-      rate: "freeOfCharge",
-      bookingCode: "FREELOCAL",
-      allowCombination: false,
-      offerName: "Bring a Local for FREE! Promotion",
-      specialConditions: "Please note, this special offer can be booked today, and is valid for travel at any time during the year except for December 24th through January 6th.",
-      offerType: "Per person",
-      _id: "57f7019e18f4fc0300a9e6d1",
-      discountType: "percentage",
-      validDatesOfTravel: [
-          {
-              fromDate: "2017-04-01T00:00:00.000Z",
-              toDate: "2017-12-24T00:00:00.000Z",
-              _id: "123",
-              updatedAt: "2016-06-28T21:20:21.754Z",
-              createdAt: "2016-06-28T21:20:21.754Z"
-          },
-          {
-              _id: "57f7019e18f4fc0300a9e6d3",
-              fromDate: "2018-01-06T00:00:00.000Z",
-              toDate: "2018-03-31T00:00:00.000Z",
-              updatedAt: "2016-08-17T20:21:08.723Z",
-              createdAt: new Date("2016-08-17T20:21:08.723Z")
-          }
-      ],
-      tags: ['free', 'multi'],
-      rates: [{nett: 2, commission: '20%'}]
+    rate: "freeOfCharge",
+    bookingCode: "FREELOCAL",
+    allowCombination: false,
+    offerName: "Bring a Local for FREE! Promotion",
+    specialConditions: "Please note, this special offer can be booked today, and is valid for travel at any time during the year except for December 24th through January 6th.",
+    offerType: "Per person",
+    _id: "57f7019e18f4fc0300a9e6d1",
+    discountType: "percentage",
+    validDatesOfTravel: [
+      {
+        fromDate: "2017-04-01T00:00:00.000Z",
+        toDate: "2017-12-24T00:00:00.000Z",
+        _id: "123",
+        updatedAt: "2016-06-28T21:20:21.754Z",
+        createdAt: "2016-06-28T21:20:21.754Z"
+      },
+      {
+        _id: "57f7019e18f4fc0300a9e6d3",
+        fromDate: "2018-01-06T00:00:00.000Z",
+        toDate: "2018-03-31T00:00:00.000Z",
+        updatedAt: "2016-08-17T20:21:08.723Z",
+        createdAt: new Date("2016-08-17T20:21:08.723Z")
+      }
+    ],
+    tags: ['free', 'multi'],
+    rates: [{nett: 2, commission: '20%'}]
   };
 
   const offerB = {
-      _id: "57f7019e18f4fc0300a9e6d1",
-      rate: "freeOfCharge",
-      bookingCode: "FREELOCAL",
-      allowCombination: false,
-      offerName: "Bring a Local for FREE! Promotion",
-      specialConditions: "Please note, this special offer can be booked today, and is valid for travel at any time during the year except for December 24th through January 6th.",
-      offerType: "Per person",
-      discountType: "percentage",
-      validDatesOfTravel: [
-          {
-              fromDate: "2018-01-06T00:00:00.000Z",
-              _id: "57f7019e18f4fc0300a9e6d3",
-              toDate: "2018-03-31T00:00:00.000Z",
-              updatedAt: new Date("2016-08-17T20:21:08.723Z"),
-              createdAt: "2016-08-17T20:21:08.723Z"
-          },
-          {
-              fromDate: "2017-04-01T00:00:00.000Z",
-              toDate: "2017-12-24T00:00:00.000Z",
-              updatedAt: "2016-06-28T21:20:21.754Z",
-              createdAt: "2016-06-28T21:20:21.754Z",
-          }
-
-      ],
-      tags: ['multi', 'free'],
-      rates: [{commission: '20%', nett: 2}]
+    _id: "57f7019e18f4fc0300a9e6d1",
+    rate: "freeOfCharge",
+    bookingCode: "FREELOCAL",
+    allowCombination: false,
+    offerName: "Bring a Local for FREE! Promotion",
+    specialConditions: "Please note, this special offer can be booked today, and is valid for travel at any time during the year except for December 24th through January 6th.",
+    offerType: "Per person",
+    discountType: "percentage",
+    validDatesOfTravel: [
+      {
+        fromDate: "2018-01-06T00:00:00.000Z",
+        _id: "57f7019e18f4fc0300a9e6d3",
+        toDate: "2018-03-31T00:00:00.000Z",
+        updatedAt: new Date("2016-08-17T20:21:08.723Z"),
+        createdAt: "2016-08-17T20:21:08.723Z"
+      },
+      {
+        fromDate: "2017-04-01T00:00:00.000Z",
+        toDate: "2017-12-24T00:00:00.000Z",
+        updatedAt: "2016-06-28T21:20:21.754Z",
+        createdAt: "2016-06-28T21:20:21.754Z"
+      }
+    ],
+    tags: ['multi', 'free'],
+    rates: [{commission: '20%', nett: 2}]
   };
 
   it('passes', () => {
